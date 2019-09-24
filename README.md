@@ -154,7 +154,8 @@ stored in a register.  After that, the clock tick counter doesn’t increment.
 Getting the right answer?  Note that you can organize your data in different
 ways to obtain fast implementations.  You can apply some algebraic manipulations
 if you think it will be better. And remember, we’re only interested in the final
-summation of the **Y** vector.
+summation of the **Y** vector.  Actually, due to the limits on displays, we 
+actually are only interested in the least significant 24-bits of the **Y** vector.
 
 BTW, you must use the multiply and block RAM special features.  I'm not sure why
 you wouldn't, but I've heard reports of student is previous semesters trying to

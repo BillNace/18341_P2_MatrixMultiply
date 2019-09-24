@@ -61,3 +61,6 @@ session.inter.vpd.tcl
 simv
 *.ver
 mat*_gen.mif
+
+#Other Randoms
+.DS_Store
