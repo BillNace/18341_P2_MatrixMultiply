@@ -1,6 +1,6 @@
 # Matrix Multiply Project
 
-18-341: Fall Semester of 2019
+18-341: Fall Semester of 2020
 
 ## Objective and Overview
 
@@ -20,9 +20,9 @@ This is an **individual** project, to be done on your Altera DE0-CV board.
 
 Project value | 45 points
 --- | ---
-Project start | 4 Sep 2019
-Project due | 18 Sep 2019 at 1:30pm
-Drop dead date | 19 Sep 2019 at 1:30pm
+Project start | 9 Sep 2020
+Project due | 23 Sep 2020 at 1:30pm
+Drop dead date | 24 Sep 2020 at 1:30pm
 
 If you have not uploaded anything by the dropdead date, we will assume you
 are no longer in the course. Why? Because the syllabus says you must attempt
@@ -79,7 +79,7 @@ to propagate through logic, which, in FPGAs, consists of look-up tables (LUTs)
 and routing fabric.  Specific timing details of your boards are available in the
 manual, but for this project we're mostly interested in the critical path delay
 -- essentially a gauge of whether your code will produce a deterministic design.
-If the longest path between registers takes >1/50 MHz (i.e. 20ns) then your
+If the longest path between registers takes >1/70 MHz (i.e. 14.30ns) then your
 signals might not arrive in time; alternatively, if the longest path is too
 fast, then you might be wasting cycles.  Fortunately, Quartus has a built-in
 tool called TimeQuest that will calculate this for you.  In the Tasks pane,
@@ -88,14 +88,14 @@ navigate to **Compile Design ➙ Timing Analysis ➙ View Report (double-click)
 
 ![Fmax Summary Image](./images/Fmax_Summary.png)
 
-The Fmax column is what were interested in.  Keep this value over 50MHz by
+The Fmax column is what were interested in.  Keep this value over 70MHz by
 breaking up large blobs of combinational logic with registers, and your design
-is guaranteed to work "as you coded it."  Let it fall below 50MHz, and all bets
+is guaranteed to work "as you coded it."  Let it fall below 70MHz, and all bets
 are off.  _HINT: trying to add 8x 16-bit values in a single clock cycle is
 probably not going to work :)_.
 
 For this project, your system is required to meet the timing requirements of the
-50MHz clock, as shown in that 1200mV, 85C model.
+70MHz clock, as shown in that 1200mV, 85C model.
 
 ## Timing Constraints
 
