@@ -8,6 +8,12 @@ SRC = $(wildcard *.sv) $(wildcard *.v)
 CORES = $(shell getconf _NPROCESSORS_ONLN)
 THREADS = $(shell echo $$((2 * $(CORES))))
 
+# Vlogan flags
+VLOGANFLAGS = -full64 -sverilog -debug_all +lint=all,noVCDE +warn=all \
+					 -timescale=1ns/1ps +v2k
+VCSUUMFLAGS = -full64 -sverilog -debug_all +lint=all,noVCDE +warn=all \
+					 -timescale=1ns/1ps
+
 # VCS flags
 VCSFLAGS = -full64 -sverilog -debug_all +lint=all,noVCDE +warn=all -j$(THREADS) \
 					 -timescale=1ns/1ps +v2k
@@ -67,4 +73,12 @@ clean :
 	-rm matB.mif
 	-rm matC.mif
 
-.PHONY : mat1 mat2 mat_gen .cp_mat1 .cp_mat2 .cp_mat_gen clean
+MODULE?=TB
+
+test_one : .vlogan
+	$(SIM) $(VCSUUMFLAGS) -nc $(MODULE)
+
+.vlogan :
+	vlogan $(VLOGANFLAGS) $(INC_V_FLAGS) $(INC_SV_FLAGS) $(SRC)
+
+.PHONY : mat1 mat2 mat_gen .cp_mat1 .cp_mat2 .cp_mat_gen clean .vlogan test_one

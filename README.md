@@ -61,7 +61,7 @@ In the handout files, we’ll provide you **A**, **B**, and **C**, all of which
 are static.  You will include **A**, **B**, and **C** in your design by
 downloading them onto the board at configuration time, but your implementation
 should work with arbitrary matrices of the same shapes. Your system will perform
-the MAC calculation, but rather than have a complicated UI to view
+the multipy-accumulate (MAC) calculation, but rather than have a complicated UI to view
 each element of the resulting matrix (**Y**), _your system will simply sum up
 all the values in the **Y** matrix and display the resulting 24-bit sum_.
 
