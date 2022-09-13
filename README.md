@@ -355,11 +355,10 @@ on [http://altera.com] or on the DVD in the box (though the DVD has an earlier
 version, I haven't found any issues with it).  I have also posted a copy on
 Canvas.  The manual describes, in great detail, everything that happens inside
 the FPGA.  If you wanted to know how big the LUTs in the CLBs were, this is the
-document (chapter 2).  If you wanted to know how the multipliers work ("hmm.
+document (chapter 1).  If you wanted to know how the multipliers work ("hmm.
 I wonder if the multiplier can work on signed values?") this is the document
-(chapter 5, in table 5-3).  If you wanted to know how the memory blocks work
-("hmm. I wonder if they support dual-port mode?") this is the document (chapter
-4, page 4-8).
+(chapter 3-8).  If you wanted to know how the memory blocks work
+("hmm. I wonder if they support dual-port mode?") this is the document (Table 2-5).
 
 Please take a few minutes to skim through the Cyclone V Device Handbook.
 
