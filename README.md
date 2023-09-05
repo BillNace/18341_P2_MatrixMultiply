@@ -1,6 +1,6 @@
 # Matrix Multiply Project
 
-18-341: Fall Semester of 2022
+18-341: Fall Semester of 2023
 
 ## Objective and Overview
 
@@ -20,9 +20,9 @@ This is an **individual** project, to be done on your Altera DE0-CV board.
 
 Project value | 45 points
 --- | ---
-Project start | 7 Sep 2022
-Project due | 19 Sep 2022 at 1:30pm
-Drop dead date | 20 Sep 2022 at 1:30pm
+Project start | 6 Sep 2023
+Project due | 18 Sep 2023 at 1:30pm
+Drop dead date | 19 Sep 2023 at 1:30pm
 
 If you have not uploaded anything by the dropdead date, we will assume you
 are no longer in the course. Why? Because the syllabus says you must attempt
