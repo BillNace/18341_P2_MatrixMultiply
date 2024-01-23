@@ -1,11 +1,11 @@
 # Matrix Multiply Project
 
-18-341: Fall Semester of 2023
+18-341: Fall Semester of 2024
 
 ## Objective and Overview
 
 The purpose of this project is to learn to use the special hardware features
-available in modern FPGAs. In the past, you've used the CLBs for combinational
+available in modern FPGAs. In the past, you've used the LEs for combinational
 and sequential circuitry (though the synthesis tools made it such that you just
 worried about getting your `always_comb` and `always_ff` blocks working). In
 this project, you'll use hardware
@@ -20,9 +20,9 @@ This is an **individual** project, to be done on your Altera DE0-CV board.
 
 Project value | 45 points
 --- | ---
-Project start | 6 Sep 2023
-Project due | 18 Sep 2023 at 1:30pm
-Drop dead date | 19 Sep 2023 at 1:30pm
+Project start | 23 January 2024
+Project due | 5 February 2024 at 3:30pm
+Drop dead date | 6 February 2024 at 3:30pm
 
 If you have not uploaded anything by the dropdead date, we will assume you
 are no longer in the course. Why? Because the syllabus says you must attempt
@@ -166,6 +166,14 @@ to run faster is worth more, see the grading sheet.  512 clock cycles is
 effectively your "speed of light" target, but don't worry if your design is
 a bit slower.  Do make sure you're not truncating intermediate values though,
 otherwise you might be fast but inaccurate!
+
+**Strong Advice**: You are strongly advised to try to build a very slow system 
+to start.  Don't try to optimize your design right away.  Rather, make sure 
+you can get the correct answers.  As you build that, you will undoubtedly learn
+a few things, which will make your design work go so much better when you 
+start to optimize.  Also, from a point perspective, getting the slowest possible
+multiplier that works is worth many, many more points than getting the 
+fastest possible multiplier that doesn't work.
 
 ## Model Organization
 
@@ -367,41 +375,26 @@ embedded memories and multipliers.
 
 ## How To Turn In Your Solution
 
-This semester we will be using
-[GitHub Classroom](https://classroom.github.com/classrooms/42654531-18-341-fall-2018)
-to hand-out as well as hand-in project code. Make sure to commit regularly and
-provide informative messages, as this will help TAs to provide feedback.
+Here's a reminder of the steps you should follow to submit your GitHub repo
+to Gradescope:
 
-When you have finished this project you should tag the release for submission
-and push your repo to GitHub.
+1. Do Git stuff:
+  ```sh
+$ git branch gradescope_final
+$ git checkout gradescope_final
+$ git add --all
+$ git commit -m "My final submission.  Yay, I'm done!"
+$ git push -u origin gradescope_final
+$ git tag -a final -m "Final submission for 18341 P2"
+$ git push --tags  
+  ```
 
-1. Tag the latest commit as "final"
-    ```sh
-    $ git tag -a final -m "Final submission for 18341 P2"
-    ```
+2. Log onto Gradescope and select the P2: Warmup assignment.
 
-2. Check that the tag was created successfully
-    ```sh
-    $ git tag
-    final
-    ```
+3. Select the repo you want to submit.
 
-3. Push repo to GitHub.
-    ```sh
-    $ git push --tags
-    ```
+4. Press submit!
 
-**If you need to alter your submission, remember to delete or modify the tag!**
-
-Remotely:
-```sh
-$ git push --delete final
-```
-
-Locally:
-```sh
-$ git tag -d final
-```
 
 ## Demos and Late Penalty
 
