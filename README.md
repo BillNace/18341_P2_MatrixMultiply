@@ -20,9 +20,9 @@ This is an **individual** project, to be done on your Altera DE0-CV board.
 
 Project value | 45 points
 --- | ---
-Project start | 23 January 2024
-Project due | 5 February 2024 at 3:30pm
-Drop dead date | 6 February 2024 at 3:30pm
+Project start | 4 September 2024
+Project due | 16 September 2024 at 3:30pm
+Drop dead date | 17 September 2024 at 3:30pm
 
 If you have not uploaded anything by the dropdead date, we will assume you
 are no longer in the course. Why? Because the syllabus says you must attempt
@@ -389,7 +389,7 @@ $ git tag -a final -m "Final submission for 18341 P2"
 $ git push --tags  
   ```
 
-2. Log onto Gradescope and select the P2: Warmup assignment.
+2. Log onto Gradescope and select the P2: Matrix Multiply assignment.
 
 3. Select the repo you want to submit.
 
