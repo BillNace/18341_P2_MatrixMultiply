@@ -187,7 +187,7 @@ module ChipInterface
    output logic [6:0] HEX5, HEX4, HEX3, HEX2, HEX1, HEX0);
 ```
 
-`BUTTON0`, when depressed, will reset the system.
+`BUTTON0`, when depressed, will reset the system.  
 
 Develop your code in a file called **matrix_multiply.sv**.  There is really no
 TA testbench for this project.  It just runs on the DE0 board and shows its
@@ -195,7 +195,7 @@ results.  To do the calculation again, hit reset (you should get the same
 result).  That being said, feel free to make your own using the template!
 
 The ROMs and multiplier that you will instantiate are detailed below.  The two
-matrices (ROMs) are initialized via the *.mif files. We are providing two
+matrices (ROMs) are initialized via the \*.mif files. We are providing two
 different **A**, **B**, and **C** matrices. The **A** matrix is provided in
 contiguous row-major order.
 
@@ -205,7 +205,7 @@ contiguous row-major order.
 * [matA_2.mif](matA_2.mif), [matB_2.mif](matB_2.mif), [matC_2.mif](matC_2.mif)
   will produce the result **24'h9409CF**.
 
-To use these, copy one set (e.g., all *_1.mif, or all *_2.mif) files to
+To use these, copy one set (e.g., all \*\_1.mif, or all \*\_2.mif) files to
 **matA.mif**, **matB.mif**, and **matC.mif** files and use the Makefile as
 specified below. The result given above is what you should expect to see if
 you’ve done the calculations correctly.
