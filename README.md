@@ -1,6 +1,6 @@
 # Matrix Multiply Project
 
-18-341: Fall Semester of 2025
+18-341: Spring Semester of 2026
 
 ## Objective and Overview
 
@@ -14,7 +14,7 @@ units and dual-port
 [Embedded (Block) RAMs](https://docs.amd.com/v/u/en-US/ug473_7Series_Memory_Resources)
 (see page 11) on the FPGA.  In addition, you have to actually meet some timing
 requirements, so you will learn to use Vivado's Static Timing Analysis (STA)
-tool.
+tool.  And, you'll learn a bunch about creating designs for pipelined systems.
 
 This is an **individual** project, to be done on your Boolean Board.
 
@@ -22,9 +22,9 @@ This is an **individual** project, to be done on your Boolean Board.
 
 Project value | 45 points
 --- | ---
-Project start | 3 September 2025
-Project due | 15 September 2025 at 3:30pm
-Drop dead date | 16 September 2025 at 3:30pm
+Project start | 20 January 2026
+Project due | 3 February 2026 at 3:30pm
+Drop dead date | 4 February 2026 at 3:30pm
 
 If you have not uploaded anything by the dropdead date, we will assume you
 are no longer in the course. Why? Because the syllabus says you must attempt
@@ -149,7 +149,8 @@ If you want to tell Vivado what your clock is, then do the following:
 
 You will be graded on getting the right answer to the calculation, on the number
 of clock ticks it takes to do the calculation (smaller is better), if it meets
-timing, and your coding style.
+timing, and your coding style.  We expect your solution to be pipelined and will 
+penalize appropriately if it is not.
 
 The number of clock ticks?  Yes, since the chip we have has lots of multiply
 units and block RAMs, you can organize the hardware and the **A** and **B**
@@ -500,6 +501,10 @@ $ git push --tags
 
 4. Press submit!
 
+## 341 Linter
+
+Your repo will include the 341 "Linter" that will show up on git commits as "Slang/Tidy,"  just like in the Warmup project.  We hope it is useful to you.  We will not
+be using the linter output for grading.
 
 ## Demos and Late Penalty
 
