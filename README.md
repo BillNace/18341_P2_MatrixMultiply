@@ -54,7 +54,7 @@ The problem to solve is the matrix equation
 where **A** is a 128x128 matrix containing 8-bit integers, **B** is a 128x1
 column vector containing 8-bit integers, **C** is a 128x1 column vector
 containing 16-bit integers, and **Y** is a 128x1 column vector containing 32-bit
-integers (why hmm?).  You should treat all values stored in the matrixes as
+integers (why hmm?).  You should treat all values stored in the matrices as
 unsigned integers, but keep in mind that they have different widths (as is
 typical for matrix-accumulation operations).  These widths are chosen such that
 the intermediate products **should not have any loss of precision.**
@@ -200,17 +200,20 @@ to add design sources to the project, add the following files:
 2. When prompted to add constraints, add the following file: **boolean341.xdc**
 
 3. When prompted to select a board/part, choose this board: **xc7s50csga324-1**
-
-4. Configure a clock constraint for the default 100 MHz clock (see
-   the section on **Clock Constraints**).
    
-5. Generate Multiplier and Block RAM modules as described in the
+4. Generate Multiplier and Block RAM modules as described in the
    **Multiplier and Block RAM Module Generation** section below.
    Make sure to load each Block RAM module with a corresponding .coe 
    file - either matA.coe, matB.coe, or matC.coe.
 
-7. Develop your solution in **matrix_multiply.sv**. Synthesize or
+5. Develop your solution in **matrix_multiply.sv**. Synthesize or
    simulate as needed.
+
+6. Configure a clock constraint for the default 100 MHz clock (see
+   the section on **Clock Constraints**). Note that you can't do this with an
+   empty design/solution, you must have some logic in your matrix_multiply.sv 
+   file for the constraint wizard to work. We recommend that you wait to do this
+   until you're ready to test the first iteration of your solution.
 
 ## Multiplier and Block RAM Module Generation
 
@@ -323,11 +326,12 @@ contiguous row-major order.
 * [matA_2.coe](matA_2.coe), [matB_2.coe](matB_2.coe), [matC_2.coe](matC_2.coe)
   will produce the result **32'h103E5507**.
 
-To use these, copy one set (e.g., all \*\_1.coe, or all \*\_2.coe) files to
-**matA.coe**, **matB.coe**, and **matC.coe** files and click 
-"Reset Output Products" under the Sources/IP Sources window for each ROM. 
-The result given above is what you should expect to see if
-you’ve done the calculations correctly.
+To use these, copy one set (e.g., all \*\_1.coe, or all \*\_2.coe) of files to
+the **matA.coe**, **matB.coe**, and **matC.coe** files. Then, under the 
+Sources/IP Sources window, right click on each ROM and then click on 
+**"Reset Output Products"** followed by **"Generate Output Products"**. 
+The result given above is what you should expect to see if you’ve done the 
+calculations correctly.
 
 We have also provided a python script [generate_matrix.py](generate_matrix.py),
 which you can use to generate a random problem if you like (it even prints out
@@ -457,6 +461,22 @@ Select the "Simulation" tab under "Project Settings" on the left, and then selec
 
 More information on using the Vivado Simulator can be found here:
 https://docs.amd.com/r/en-US/ug900-vivado-logic-simulation/Simulating-with-Vivado-Simulator
+
+**Potential Simulation Bugs with IP Blocks (How to Fix):**
+Sometimes, you may encounter bugs with Vivado's simulator when you're simulating 
+the generated IP blocks (BRAMs and multipliers). Specifically, your 
+BRAMs or multipliers may be outputting XXs instead of actual values, even when 
+all of their inputs are properly initialized. To fix such bugs, you can try 
+following the steps below:
+1. Close Vivado
+2. Delete the .cache/, .runs/, and .sim/ folders in your project directory
+3. Reopen Vivado
+4. Go to the IP Sources tab. Then, right click on each BRAM and click on
+**Reset Output Products** followed by **Generate Output Products**
+5. Run the simulation
+
+If this doesn't help, as a last resort, you can try remaking your entire
+project from scratch.
 
 ## Some Other Things you Should Learn
 
