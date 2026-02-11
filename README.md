@@ -149,8 +149,8 @@ If you want to tell Vivado what your clock is, then do the following:
 
 You will be graded on getting the right answer to the calculation, on the number
 of clock ticks it takes to do the calculation (smaller is better), if it meets
-timing, and your coding style.  We expect your solution to be pipelined and will 
-penalize appropriately if it is not.
+timing, your design documentation and your coding style.  
+We expect your solution to be pipelined and will penalize appropriately if it is not.
 
 The number of clock ticks?  Yes, since the chip we have has lots of multiply
 units and block RAMs, you can organize the hardware and the **A** and **B**
@@ -508,6 +508,7 @@ to Gradescope:
   ```sh
 $ git branch gradescope_final
 $ git checkout gradescope_final
+# Make sure your design docs are included in the repo
 $ git add --all
 $ git commit -m "My final submission.  Yay, I'm done!"
 $ git push -u origin gradescope_final
