@@ -1,6 +1,6 @@
 # clk input is from the 100 MHz oscillator on Boolean board
-#create_clock -period 10.000 -name gclk [get_ports clk_100MHz]
-set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports {CLOCK_100}]
+set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports CLOCK_100]
+create_clock -period 10.000 -name CLOCK_100 -waveform {0.000 5.000} -add [get_ports CLOCK_100]
 
 # Set Bank 0 voltage
 set_property CFGBVS VCCO [current_design]
