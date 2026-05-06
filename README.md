@@ -19,7 +19,7 @@ tool.  And, you'll learn a bunch about creating designs for pipelined systems.
 This is an **individual** project, to be done on your Boolean Board.
 
 ## Schedule and Scoring
-
+#BILL: TODO: See Alternative Clock Constraints.txt file
 Project value | 45 points
 --- | ---
 Project start | 20 January 2026
@@ -119,7 +119,7 @@ For this project, your system must meet the timing requirements of the
 
 ## Clock Constraints
 
-If you want to tell Vivado what your clock is, then do the following:
+You want to tell Vivado what your clock is, then do the following:
 
 1. Run Synthesis on your design (you don't need to run Implementation).
 
